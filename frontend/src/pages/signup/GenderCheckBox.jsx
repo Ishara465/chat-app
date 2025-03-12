@@ -1,18 +1,24 @@
 import React from 'react'
 
-function GenderCheckBox() {
+function GenderCheckBox({onCheckboxChange,selectedGender}) {
   return (
     <div className='flex'>
       <div className='form-control p-2'>
-        <label className={`label gap-2 cursor-pointer`}>
+        <label className={`label gap-2 cursor-pointer ${selectedGender === "male" ? "selected" :""}`}>
           <span className='label-text'>Male</span>
-          <input type="checkbox"  class="checkbox checkbox-info"/>
+          <input type="checkbox"  className="checkbox checkbox-info"
+          checked={selectedGender === "male"}
+          onChange={() => onCheckboxChange("male")}
+          />
         </label>
       </div>
       <div className='form-control p-2'>
-      <label className={`label gap-2 cursor-pointer`}>
+      <label className={`label gap-2 cursor-pointer ${selectedGender === "female" ? "selected" :""}`}>
           <span className='label-text'>Female</span>
-          <input type="checkbox"  class="checkbox checkbox-info"/>
+          <input type="checkbox"  className="checkbox checkbox-info"
+          checked={selectedGender === "female"}
+          onChange={() => onCheckboxChange("female")}
+          />
         </label>
       </div>
       
@@ -33,13 +39,13 @@ export default GenderCheckBox
 //       <div className='form-control p-2'>
 //         <label className={`label gap-2 cursor-pointer`}>
 //           <span className='label-text'>Male</span>
-//           <input type="checkbox"  class="checkbox checkbox-info"/>
+//           <input type="checkbox"  className="checkbox checkbox-info"/>
 //         </label>
 //       </div>
 //       <div className='form-control p-2'>
 //       <label className={`label gap-2 cursor-pointer`}>
 //           <span className='label-text'>Female</span>
-//           <input type="checkbox"  class="checkbox checkbox-info"/>
+//           <input type="checkbox"  className="checkbox checkbox-info"/>
 //         </label>
 //       </div>
       
